@@ -7,34 +7,50 @@
     function drawChart() {
 
       var data = google.visualization.arrayToDataTable([
-        ['ID', 'P/E Ratio', 'Market Cap', 'Country', 'Pct of SMH'],
-        ['TSM',  29.47,  592315900000,  'Taiwan',     11.18],
-        ['NVDA', 76.25,  627700000000,  'USA',         9.04],
-        ['AVGO', 39.14,  247815232280,  'USA',         5.69],
-        ['QCOM', 20.07,  201270930000,  'USA',         5.46],
-        ['INTC',  9.92,  198705510000,  'USA',         5.30],
-        ['TXN',  20.56,  159431935873,  'USA',         4.93],
-        ['AMD',	 48.05,  148317900000,  'USA',         4.85],
-        ['MU', 	 12.33,   94195641240,  'USA',         4.82],
-        ['ASML', 39.82,  266401800000,  'Netherlands', 4.60],
-        ['AMAT', 21.25,  123281206500,  'USA',         4.44],
-        ['ADI',  43.63,   85768256519,  'USA',         4.43],
-        ['LRCX', 17.80,   80392512629,  'USA',         4.10],
-        ['NXPI', 28.85,   53859471249,  'Netherlands', 3.75],
-        ['XLNX', 56.63,   54182049480,  'USA',         3.73],
-        ['KLAC', 19.33,   58058547866,  'USA',         3.58],
-        ['MRVL', 22.98,   64550700000,  'USA',         3.53],
-        ['SNPS', 63.36,   46820180000,  'USA',         3.06],
-        ['MCHP', 34.57,   41943938408,  'USA',         2.53],
-        ['CDNS', 59.13,   41119410170,  'USA',         2.52],
-        ['STM',  20.47,   40621380000,  'Switzerland', 2.36],
-        ['SWKS', 16.35,   22319540000,  'USA',         1.59],
-        ['ON',   27.35,   28422092592,  'USA',         1.59],
-        ['TER',  20.56,   18619990000,  'USA',         1.33],
-        ['QRVO', 12.99,   14265261296,  'USA',         1.00],
-        ['OLED', 35.77,    6916634585,  'USA',         0.47]
+        ['Short Name',	'Price/Sales',	'Market Cap (USD)',	'Region',	'Weight'],
+        ['Enphase',	16.87,	21841000000,	'North America',	8.841],
+        ['First Solar',	2.9,	7886251339,	'North America',	7.213],
+        ['Sunrun',	3.11,	5288975195,	'North America',	5.129],
+        ['Hannon Armstrong',	18.87,	3666392004,	'North America',	2.644],
+        ['Sunnova',	8.52,	2018551000,	'North America',	2.601],
+        ['Shoals',	7.9,	1610000000,	'North America',	2.509],
+        ['SunPower',	2.08,	2968477512,	'North America',	2.501],
+        ['Canadian Solar',	0.37,	1691933448,	'North America',	2.476],
+        ['Array',	1.6,	1450000000,	'North America',	1.956],
+        ['ReneSola',	4.52,	397565937,	'North America',	0.799],
+        ['Beam ',	12.82,	121621530,	'North America',	0.337],
+        ['Xinyi Solar',	6.81,	15770000000,	'Asia',	7.709],
+        ['Daqo',	1.76,	3116975792,	'Asia',	4.234],
+        ['JinkoSolar',	0.38,	2068412015,	'Asia',	3.007],
+        ['Hanwha Solutions',	0.56,	5660000000,	'Asia',	2.728],
+        ['Flat Glass',	6.89,	14230000000,	'Asia',	2.607],
+        ['Xinyi Energy',	14.07,	3670000000,	'Asia',	1.944],
+        ['United Renewable',	2.36,	1220000000,	'Asia',	1.887],
+        ['TSEC Corp',	3.1,	600000000,	'Asia',	1.098],
+        ['Luoyang Glass',	1.57,	2100000000,	'Asia',	0.956],
+        ['West Holdings',	2.57,	1470000000,	'Asia',	0.917],
+        ['Motech',	2.13,	420000000,	'Asia',	0.861],
+        ['Beijing Ent Clean',	0.96,	870000000,	'Asia',	0.722],
+        ['Azure Power',	2.93,	945674000,	'Asia',	0.654],
+        ['Giga Solar',	1.49,	500000000,	'Asia',	0.63],
+        ['GCL New',	0.69,	490000000,	'Asia',	0.629],
+        ['RENOVA',	5.11,	980000000,	'Asia',	0.604],
+        ['Maxeon Solar',	0.38,	437016704,	'Asia',	0.518],
+        ['Atlantica',	3,	3685203900,	'Europe',	3.236],
+        ['Encavis',	5.9,	2450000000,	'Europe',	2.806],
+        ['Solaria',	22.23,	2070000000,	'Europe',	2.333],
+        ['Meyer Burger',	14.56,	937730000,	'Europe',	1.822],
+        ['Scatec',	6.41,	2250000000,	'Europe',	1.766],
+        ['Neoen',	10.88,	3640000000,	'Europe',	1.722],
+        ['SMA Solar',	1.05,	1240000000,	'Europe',	1.358],
+        ['Soltec',	2.25,	528600000,	'Europe',	0.592],
+        ['Grenergy',	4.7,	783740000,	'Europe',	0.512],
+        ['SolarEdge',	7.22,	13969000000,	'Israel',	10.586],
+        ['Enlight',	24.55,	1990000000,	'Israel',	1.896],
+        ['OY Nofar',	6.63,	890000000,	'Israel',	1.035],
+        ['Energix',	24.33,	1990000000,	'Israel',	1.031],
+        ['Doral Group',	14.19,	580000000,	'Israel',	0.612]
       ]);
-
 
 
 
@@ -57,6 +73,6 @@
   </script>
 </head>
 <body>
-  <div id="noAura" style="width: 1800px; height: 1000px;"></div>
+  <div id="noAura" style="width: 1280px; height: 720px;"></div>
 </body>
 </html>
