@@ -57,7 +57,7 @@
       var options = {
         title: 'Invesco Solar ETF Holdings as of February 8, 2022' +
           ' (Bubble Size = Weight in TAN)',
-        hAxis: {title: 'P/S Ratio', logScale: 'true'},
+        hAxis: {title: 'P/S Ratio', logScale: 'true', maxValue: '50'},
         vAxis: {title: 'Market Cap (USD)', logScale: 'false', maxValue: '24000000000'},
         bubble: {
           textStyle: {
@@ -79,6 +79,6 @@
   </script>
 </head>
 <body>
-  <div id="noAura" style="width: 1760px; height: 1280px;"></div>
+  <div id="noAura" style="width: 1840px; height: 1280px;"></div>
 </body>
 </html>
