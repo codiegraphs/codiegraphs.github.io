@@ -57,15 +57,16 @@
       var options = {
         title: 'Invesco Solar ETF Holdings as of February 8, 2022' +
           ' (Bubble Size = Weight in TAN)',
-        hAxis: {title: 'P/S Ratio'},
-        vAxis: {title: 'Market Cap (USD)'},
+        hAxis: {title: 'P/S Ratio', logScale: 'true'},
+        vAxis: {title: 'Market Cap (USD)', maxValue: '24000000000'},
         bubble: {
           textStyle: {
-            fontSize: 10,
+            fontSize: 11,
             fontName: 'Arial',
             color: 'black',
             bold: true,
             italic: false,
+            auraColor: 'none'
           }
         }
       };
