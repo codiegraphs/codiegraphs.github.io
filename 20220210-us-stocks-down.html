@@ -7,7 +7,7 @@
     function drawChart() {
 
       var data = google.visualization.arrayToDataTable([
-        ['Ticker',	'Price',	'1Y Performance (%)',	'Region',	'Market Cap'],
+        ['Ticker',	'P/E Ratio',	'Down from 52 wk hi',	'Region',	'Market Cap'],
 				['PYPL',	33.88,	-61.6,	'North America',	137870000000],
         ['BABA',	17.45,	-54.8,	'Asia',	340450000000],
 				['ZM',	38.75,	-67.7,	'North America',	41570000000],
@@ -88,7 +88,7 @@
           ' (Bubble Size = Market Cap)',
         hAxis: {title: 'P/E ratio', viewWindow: {min:0,max:50}, viewWindowMode: "explicit"},
         vAxis: {title: '% down from 52-week high', viewWindow: {min:-95,max:-50}, viewWindowMode: "explicit"},
-        sizeAxis: {minSize:8,maxSize:100},
+        sizeAxis: {minSize:8,maxSize:120},
         chartArea: {width: '75%', height: '80%'},
         bubble: {
           textStyle: {
