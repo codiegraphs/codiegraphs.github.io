@@ -2,14 +2,23 @@
 <html>
     <head>
         <title>CodieGraphs</title>
-        <style>
-            body {background-color: rgb(19, 19, 19); color: rgb(221, 221, 221); max-width: max-content; margin: auto}
-            a:link, a:visited {color: white; text-align: center;}
-            a:hover, a:active {color: red;}
+        <style >
+            body {background-color: rgb(19, 19, 19); color: rgb(221, 221, 221); max-width: max-content; margin: auto;}
+
             table {margin: 0px auto; text-align: center; border: 1px solid rgb(221, 221, 221); font-family:Arial, Helvetica, sans-serif; font-size:medium; text-align:center;}
-            tr,th,td {padding: 4px}
+            th {padding: 6px; background-color: rgb(38, 38, 38);}
+            tr,th,td {padding: 4px; background-color: black;}
+
             h1 {font-family:Arial, Helvetica, sans-serif; font-size:large; text-align:center;}
             p {font-family:Arial, Helvetica, sans-serif; font-size:medium; text-align:center;}
+
+            a:link, a:visited {color: white; text-align: center;}
+            a:hover, a:active {color: red;}
+
+            #thumbwrap {position:relative; width:252px; height:252px;}
+            .thumb img {border:1px solid #000; margin:3px; float:left;}
+            .thumb span {position:absolute; visibility:hidden;}
+            .thumb:hover, .thumb:hover span {visibility:visible; top:0; left:250px; z-index:1;}
         </style>
     </head>
 
@@ -19,6 +28,8 @@
         </h1><br>
         <p>This is a simple web page to host graphs as I make them.</p>
         <br><br>
+
+        <div id="thumbwrap">
         <table>
             <tr>
                 <th>Date</th>
@@ -28,17 +39,19 @@
             <tr>
                 <td>2022-02-09</td>
                 <td>
-                    <a href="20220209-TAN-Holdings.html">Invesco Solar ETF Holdings</a>
+                    <a href="20220209-tan-holdings.html" class="thumb">Invesco Solar ETF Holdings<span><img src="png/20220209-tan-holdings-thumb320.png" alt=""></span></a>
                 </td>
                 <td>Google Charts</td>
             </tr>
             <tr>
                 <td>2022-02-08</td>
                 <td>
-                    <a href="20220208-SMH-Holdings.html">VanEck Semiconductors ETF Holdings</a>
+                    <a href="20220208-smh-holdings.html" class="thumb">VanEck Semiconductors ETF Holdings<span><img src="png/20220208-smh-holdings-thumb320.png" alt=""></span></a>
                 </td>
                 <td>Google Charts</td>
             </tr>
         </table>
+        </div>
+
     </body>
 </html>
