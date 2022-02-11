@@ -8,8 +8,8 @@
 
       var data = google.visualization.arrayToDataTable([
         ['Ticker',	'Price',	'1Y Performance (%)',	'Region',	'Market Cap'],
-				['BABA',	17.45,	-54.8,	'Asia',	340450000000],
 				['PYPL',	33.88,	-61.6,	'North America',	137870000000],
+        ['BABA',	17.45,	-54.8,	'Asia',	340450000000],
 				['ZM',	38.75,	-67.7,	'North America',	41570000000],
 				['PINS',	47.49,	-71.6,	'North America',	14990000000],
 				['LU',	5.39,	-67.9,	'Asia',	13870000000],
@@ -87,7 +87,7 @@
         title: 'U.S. listed stocks down 50% or more and P/E under 50 as of Feb 10, 2022' +
           ' (Bubble Size = Market Cap)',
         hAxis: {title: 'P/E Ratio'},
-        vAxis: {title: 'Loss'},
+        vAxis: {title: 'Loss', viewWindow: {min:-100,max:-50}, viewWindowMode: "explicit"},
         sizeAxis: {maxSize: 100},
         bubble: {
           textStyle: {
