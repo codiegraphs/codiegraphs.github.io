@@ -86,13 +86,10 @@
       var options = {
         title: 'U.S. listed stocks down 50% or more and P/E under 50 as of Feb 10, 2022' +
           ' (Bubble Size = Market Cap)',
-        hAxis: {title: 'P/E Ratio', textPosition: 'in'},
-        vAxis: {title: 'Loss', viewWindow: {min:-100,max:-50}, viewWindowMode: "explicit", textPosition: 'in'},
+        hAxis: {title: 'P/E Ratio'},
+        vAxis: {title: 'Loss', viewWindow: {min:-95,max:-50}, viewWindowMode: "explicit"},
         sizeAxis: {minSize:8,maxSize:100},
-        chartArea: {width: '100%', height: '100%'},
-        legend: {position: 'in'},
-        titlePosition: 'in', 
-        axisTitlesPosition: 'in',
+        chartArea: {width: '80%', height: '80%'},
         bubble: {
           textStyle: {
             auraColor: 'none',
