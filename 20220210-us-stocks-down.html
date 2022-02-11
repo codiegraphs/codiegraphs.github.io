@@ -84,18 +84,18 @@
 
 
       var options = {
-        title: 'U.S. listed stocks down 50% or more and P/E under 50 as of Feb 10, 2022' +
+        title: 'U.S. listed stocks down 50% 1Y and P/E under 50 as of Feb 10, 2022' +
           ' (Bubble Size = Market Cap)',
-        hAxis: {title: 'P/E Ratio'},
-        vAxis: {title: 'Loss', viewWindow: {min:-95,max:-50}, viewWindowMode: "explicit"},
+        hAxis: {title: 'P/E ratio', viewWindow: {min:0,max:50}, viewWindowMode: "explicit"},
+        vAxis: {title: '% down from 52-week high', viewWindow: {min:-95,max:-50}, viewWindowMode: "explicit"},
         sizeAxis: {minSize:8,maxSize:100},
-        chartArea: {width: '80%', height: '80%'},
+        chartArea: {width: '75%', height: '80%'},
         bubble: {
           textStyle: {
             auraColor: 'none',
             color: 'black',
-            fontSize: 10.5,
-            bold: true,
+            fontSize: 11.5,
+            bold: false,
             italics: false,
             fontName: 'Arial'
           },
@@ -110,6 +110,6 @@
   </script>
 </head>
 <body>
-  <div id="noAura" style="width: 1600px; height: 900px;"></div>
+  <div id="noAura" style="width: 1720px; height: 900px;"></div>
 </body>
 </html>
