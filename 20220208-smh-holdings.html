@@ -1,0 +1,62 @@
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID', 'P/E Ratio', 'Market Cap', 'Country', 'Pct of SMH'],
+        ['TSM',  29.47,  592315900000,  'Taiwan',     11.18],
+        ['NVDA', 76.25,  627700000000,  'USA',         9.04],
+        ['AVGO', 39.14,  247815232280,  'USA',         5.69],
+        ['QCOM', 20.07,  201270930000,  'USA',         5.46],
+        ['INTC',  9.92,  198705510000,  'USA',         5.30],
+        ['TXN',  20.56,  159431935873,  'USA',         4.93],
+        ['AMD',	 48.05,  148317900000,  'USA',         4.85],
+        ['MU', 	 12.33,   94195641240,  'USA',         4.82],
+        ['ASML', 39.82,  266401800000,  'Netherlands', 4.60],
+        ['AMAT', 21.25,  123281206500,  'USA',         4.44],
+        ['ADI',  43.63,   85768256519,  'USA',         4.43],
+        ['LRCX', 17.80,   80392512629,  'USA',         4.10],
+        ['NXPI', 28.85,   53859471249,  'Netherlands', 3.75],
+        ['XLNX', 56.63,   54182049480,  'USA',         3.73],
+        ['KLAC', 19.33,   58058547866,  'USA',         3.58],
+        ['MRVL', 22.98,   64550700000,  'USA',         3.53],
+        ['SNPS', 63.36,   46820180000,  'USA',         3.06],
+        ['MCHP', 34.57,   41943938408,  'USA',         2.53],
+        ['CDNS', 59.13,   41119410170,  'USA',         2.52],
+        ['STM',  20.47,   40621380000,  'Switzerland', 2.36],
+        ['SWKS', 16.35,   22319540000,  'USA',         1.59],
+        ['ON',   27.35,   28422092592,  'USA',         1.59],
+        ['TER',  20.56,   18619990000,  'USA',         1.33],
+        ['QRVO', 12.99,   14265261296,  'USA',         1.00],
+        ['OLED', 35.77,    6916634585,  'USA',         0.47]
+      ]);
+
+
+
+
+      var options = {
+        title: 'VanEck Semiconductors ETF Holdings as of February 7, 2022' +
+          ' (Bubble Size = Weight in SMH)',
+        hAxis: {title: 'P/E Ratio'},
+        vAxis: {title: 'Market Cap'},
+        bubble: {
+          textStyle: {
+            auraColor: 'none',
+          }
+        }
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('noAura'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="noAura" style="width: 1280px; height: 720px;"></div>
+</body>
+</html>
