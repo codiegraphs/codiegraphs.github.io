@@ -63,13 +63,20 @@
         tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
 
         tree.draw(data, {
-          minColor: '#f00',
-          midColor: '#ddd',
-          maxColor: '#0d0',
+          minColor: '#777',
+          midColor: '#7b7',
+          maxColor: '#7f7',
+		  minHighlightColor: '#AAAAAA',
+		  midHighlightColor: '#CCCCCC',
+		  maxHighlightColor: '#EEEEEE',
           headerHeight: 15,
           fontColor: 'black',
           showScale: true
         });
+
+
+
+
 
       }
     </script>
