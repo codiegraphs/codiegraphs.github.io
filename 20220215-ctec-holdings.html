@@ -60,25 +60,54 @@
 
         ]);
 
-        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+        var tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
 
-        tree.draw(data, {
-          minColor: '#777',
-          midColor: '#7b7',
-          maxColor: '#7f7',
-		  minHighlightColor: '#AAAAAA',
-		  midHighlightColor: '#CCCCCC',
-		  maxHighlightColor: '#EEEEEE',
-          headerHeight: 15,
-          fontColor: 'black',
-          showScale: true
-        });
+		var options = { // For v49 or before
+        highlightOnMouseOver: true,
+        maxDepth: 1,
+        maxPostDepth: 2,
+        minHighlightColor: '#8c6bb1',
+        midHighlightColor: '#9ebcda',
+        maxHighlightColor: '#edf8fb',
+        minColor: '#009688',
+        midColor: '#f7f7f7',
+        maxColor: '#ee8100',
+        headerHeight: 15,
+        showScale: true,
+        height: 500,
+        useWeightedAverageForAggregation: true
+      };
 
+      var optionsV50 = { // For v50+
+        enableHighlight: true,
+        maxDepth: 1,
+        maxPostDepth: 2,
+        minHighlightColor: '#8c6bb1',
+        midHighlightColor: '#9ebcda',
+        maxHighlightColor: '#edf8fb',
+        minColor: '#009688',
+        midColor: '#f7f7f7',
+        maxColor: '#ee8100',
+        headerHeight: 15,
+        showScale: true,
+        height: 500,
+        useWeightedAverageForAggregation: true,
+        // Use click to highlight and double-click to drill down.
+        eventsConfig: {
+          highlight: ['click'],
+          unhighlight: ['mouseout'],
+          rollup: ['contextmenu'],
+          drilldown: ['dblclick'],
+        }
+      };
 
-
-
+        tree.draw(data, options);
+        // Please uncomment the following line for v50+.
+        // tree.draw(data, optionsV50);
 
       }
+
+
     </script>
   </head>
   <body>
