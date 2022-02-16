@@ -62,7 +62,7 @@
 
         var tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
 
-		var options = { // For v49 or before
+		var options = {
         highlightOnMouseOver: true,
         maxDepth: 1,
         maxPostDepth: 2,
@@ -80,7 +80,7 @@
         useWeightedAverageForAggregation: true
       };
 
-      var optionsV50 = { // For v50+
+      var optionsV50 = {
         enableHighlight: true,
         maxDepth: 1,
         maxPostDepth: 2,
@@ -96,7 +96,6 @@
         showScale: true,
         height: 500,
         useWeightedAverageForAggregation: true,
-        // Use click to highlight and double-click to drill down.
         eventsConfig: {
           highlight: ['click'],
           unhighlight: ['mouseout'],
@@ -106,8 +105,17 @@
       };
 
         tree.draw(data, options);
-        // Please uncomment the following line for v50+.
-        // tree.draw(data, optionsV50);
+
+		function showFullTooltip(row, size, value) {
+    return '<div style="background:#DDDDDD; padding:10px; border-style:none">' +
+           '<span style="font-family:Arial"><b>' + data.getValue(row, 0) +
+           '</b>, ' + data.getValue(row, 1) + ', ' + data.getValue(row, 2) +
+           ', ' + data.getValue(row, 3) + '</span><br>' +
+           'XXXXXXX: ' + row + '<br>' +
+	   data.getColumnLabel(2) +
+           ' YYYYYYY: ' + size + '<br>' +
+	   data.getColumnLabel(3) + 'ZZZZZZZ: ' + value + ' </div>';
+		}
 
       }
 
