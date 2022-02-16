@@ -1,116 +1,59 @@
 <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
+      google.charts.load('current', {'packages':['treemap']});
       google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-
-      var data = google.visualization.arrayToDataTable([
-		        ['Ticker',	'P/E Ratio',	'Down from 52 wk hi',	'Region',	'Market Cap'],
-				['PYPL',	33.88,	-61.6,	'North America',	137870000000],
-		        ['BABA',	17.45,	-54.8,	'Asia',	340450000000],
-				['ZM',	38.75,	-67.7,	'North America',	41570000000],
-				['PINS',	47.49,	-71.6,	'North America',	14990000000],
-				['LU',	5.39,	-67.9,	'Asia',	13870000000],
-				['TME',	18.28,	-80.5,	'Asia',	10360000000],
-				['PENN',	22.39,	-64.7,	'North America',	8560000000],
-				['UWMC',	0.32,	-64.3,	'North America',	7250000000],
-				['FUTU',	18.19,	-78,	'Asia',	6540000000],
-				['VIPS',	7.74,	-78.4,	'Asia',	6480000000],
-				['PAGS',	25.04,	-71.7,	'South America',	5680000000],
-				['CRSP',	13,	-63.8,	'Europe',	4620000000],
-				['AMED',	21.05,	-55.5,	'North America',	4500000000],
-				['RLX',	22.52,	-86.3,	'Asia',	4490000000],
-				['QDEL',	4.67,	-60.7,	'North America',	4010000000],
-				['ATUS',	6.77,	-61.2,	'North America',	3990000000],
-				['ATHM',	7.8,	-78.5,	'Asia',	3860000000],
-				['BMBL',	22.27,	-65.2,	'North America',	3760000000],
-				['MNSO',	40.53,	-71.8,	'Asia',	2950000000],
-				['OLLI',	17.02,	-53.5,	'North America',	2880000000],
-				['DQ',	4.56,	-68.9,	'Asia',	2820000000],
-				['SPWR',	8.97,	-67.6,	'North America',	2760000000],
-				['ABCL',	13.43,	-81.9,	'North America',	2710000000],
-				['ENIC',	9.49,	-54,	'South America',	2600000000],
-				['EDU',	7.84,	-92,	'Asia',	2590000000],
-				['LPRO',	18.09,	-56.6,	'North America',	2360000000],
-				['EBS',	10.43,	-65.8,	'North America',	2300000000],
-				['DDD',	7.6,	-67,	'North America',	2280000000],
-				['FLGT',	3.72,	-61.5,	'North America',	2060000000],
-				['OSTK',	15.89,	-55.6,	'North America',	1990000000],
-				['REGI',	10.3,	-68,	'North America',	1860000000],
-				['SKLZ',	2.12,	-90.1,	'North America',	1710000000],
-				['CRNC',	39.04,	-68,	'North America',	1680000000],
-				['CSIQ',	24.33,	-56,	'North America',	1620000000],
-				['IRBT',	23.36,	-54.6,	'North America',	1600000000],
-				['PRLB',	47.39,	-77,	'North America',	1460000000],
-				['HUYA',	8.11,	-83.3,	'Asia',	1440000000],
-				['LDI',	4.55,	-89.8,	'North America',	1230000000],
-				['NIU',	33.77,	-74.1,	'Asia',	1030000000],
-				['FSM',	11.87,	-60.6,	'North America',	979900000],
-				['FLWS',	11.18,	-60.7,	'North America',	955950000],
-				['YALA',	15.98,	-84,	'Middle East',	936080000],
-				['CAN',	10.46,	-86.8,	'Asia',	802170000],
-				['WW',	16.86,	-71.6,	'North America',	800630000],
-				['QURE',	2.51,	-56.8,	'Europe',	762710000],
-				['HYLN',	1.59,	-81.5,	'North America',	688120000],
-				['LX',	1.92,	-75.6,	'Asia',	664200000],
-				['RBBN',	24.06,	-61.5,	'North America',	640580000],
-				['TIGR',	24.86,	-88.6,	'Asia',	640160000],
-				['GNOG',	13.93,	-64.3,	'North America',	609300000],
-				['AVIR',	25.92,	-92.5,	'North America',	582470000],
-				['CANG',	2.42,	-73.7,	'Asia',	563630000],
-				['HMPT',	1.55,	-71.2,	'North America',	546900000],
-				['GRWG',	30.78,	-86,	'North America',	544920000],
-				['GHG',	13.26,	-66.7,	'Asia',	540660000],
-				['SLQT',	6.42,	-90.1,	'North America',	531310000],
-				['FDMT',	5.48,	-69.9,	'North America',	499300000],
-				['GILT',	8.11,	-63.2,	'Middle East',	483800000],
-				['OPFI',	16.15,	-61.7,	'North America',	467890000],
-				['GRVY',	6.48,	-66.3,	'Asia',	422290000],
-				['SOL',	36.69,	-78.2,	'North America',	385520000],
-				['CASA',	15.14,	-66.6,	'North America',	381050000],
-				['WPRT',	16.45,	-85.9,	'North America',	378310000],
-				['XOS',	25,	-83.9,	'North America',	368000000],
-				['FANH',	7.91,	-59.6,	'Asia',	366450000],
-				['TIG',	13.75,	-64,	'North America',	355520000],
-				['KODK',	8.56,	-65.2,	'North America',	335990000],
-				['HLG',	4.45,	-78.9,	'Asia',	327030000],
-				['TCMD',	40.37,	-74.8,	'North America',	316810000],
-				['FF',	34.07,	-51.6,	'North America',	316460000],
-				['MNTS',	2.13,	-86,	'North America',	306750000],
-      ]);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
 
 
 
-      var options = {
-        title: 'U.S. listed stocks down 50% or more (2021-02-11 to 2022-02-10) and P/E under 50, Bubble Size = Market Cap',
-        hAxis: {title: 'P/E ratio', viewWindow: {min:0,max:50}, viewWindowMode: 'explicit', 
-          titleTextStyle: {fontName: 'Arial', bold: true, italic: false, fontSize: 17}},
-        vAxis: {title: '% down from 52-week high', viewWindow: {min:-95,max:-50}, viewWindowMode: 'explicit', 
-          titleTextStyle: {fontName: 'Arial', bold: true, italic: false, fontSize: 17}},
-        sizeAxis: {minSize:8,maxSize:250},
-        chartArea: {width: '75%', height: '80%'},
-        bubble: {
-          textStyle: {
-            auraColor: 'none',
-            color: 'black',
-            fontSize: 12.5,
-            bold: false,
-            italics: false,
-            fontName: 'Arial'
-          },
-          opacity: '0.55'
-        }
-      };
+		['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Global',    null,                 0,                               0],
+          ['America',   'Global',             0,                               0],
+          ['Europe',    'Global',             0,                               0],
+          ['Asia',      'Global',             0,                               0],
+          ['Australia', 'Global',             0,                               0],
+          ['Africa',    'Global',             0,                               0],
+          ['Brazil',    'America',            11,                              10],
+          ['USA',       'America',            52,                              31],
+          ['Mexico',    'America',            24,                              12],
+          ['Canada',    'America',            16,                              -23],
+          ['France',    'Europe',             42,                              -11],
+          ['Germany',   'Europe',             31,                              -2],
+          ['Sweden',    'Europe',             22,                              -13],
+          ['Italy',     'Europe',             17,                              4],
+          ['UK',        'Europe',             21,                              -5],
+          ['China',     'Asia',               36,                              4],
+          ['Japan',     'Asia',               20,                              -12],
+          ['India',     'Asia',               40,                              63],
+          ['Laos',      'Asia',               4,                               34],
+          ['Mongolia',  'Asia',               1,                               -5],
+          ['Israel',    'Asia',               12,                              24],
+          ['Iran',      'Asia',               18,                              13],
+          ['Pakistan',  'Asia',               11,                              -52],
+          ['Egypt',     'Africa',             21,                              0],
+          ['S. Africa', 'Africa',             30,                              43],
+          ['Sudan',     'Africa',             12,                              2],
+          ['Congo',     'Africa',             10,                              12],
+          ['Zaire',     'Africa',             8,                               10]
+        ]);
 
-      var chart = new google.visualization.BubbleChart(document.getElementById('noAura'));
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
 
-      chart.draw(data, options);
-    }
-  </script>
-</head>
-<body>
-  <div id="noAura" style="width: 1800px; height: 900px;"></div>
-</body>
+        tree.draw(data, {
+          minColor: '#f00',
+          midColor: '#ddd',
+          maxColor: '#0d0',
+          headerHeight: 15,
+          fontColor: 'black',
+          showScale: true
+        });
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
 </html>
