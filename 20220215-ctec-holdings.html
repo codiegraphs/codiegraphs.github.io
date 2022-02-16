@@ -109,14 +109,12 @@
         tree.draw(data, options);
 
 		function showFullTooltip(row, size, value) {
-    return '<div style="background:#DDDDDD; padding:10px; border-style:none">' +
+    return '<div style="background:#eeeeee; padding:10px; border-style:none">' +
            '<span style="font-family:Arial"><b>' + data.getValue(row, 0) +
-           '</b>, ' + data.getValue(row, 1) + ', ' + data.getValue(row, 2) +
-           ', ' + data.getValue(row, 3) + '</span><br>' +
-           'XXXXXXX: ' + row + '<br>' +
+           '</b></span><br>' +
 	   data.getColumnLabel(2) +
-           ' YYYYYYY: ' + size + '<br>' +
-	   data.getColumnLabel(3) + 'ZZZZZZZ: ' + value + ' </div>';
+           ' (%): ' + size + '<br>' +
+	   data.getColumnLabel(3) + ' (Volatility): ' + value + ' </div>';
 		}
 
       }
